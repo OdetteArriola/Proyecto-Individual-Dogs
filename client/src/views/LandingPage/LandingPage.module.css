@@ -1,0 +1,45 @@
+@import url('https://fonts.googleapis.com/css2?family=Unbounded&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Dosis:wght@300&display=swap');
+
+.landing {
+    background: #e9e4ea
+        url("https://img.freepik.com/premium-vector/seamless-pattern-cute-dog-puppy-cartoon-funny-happy-dog-character-with-simple-shape-style-illustration-background-wallpaper-textile-fabric_253081-198.jpg?w=826");
+    height: 100vh;
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    flex-direction: row;
+    gap: 5rem;
+    justify-content: center;
+    align-items: center;
+  }
+  .title{
+    height: 9vw;
+    text-align: center;
+    font-size: 80px;
+    color:#000000;
+    position: absolute;
+    top: 22%;
+    left: 17%;
+    font-family: "Unbounded";
+    text-shadow: 0.1em 0.2em 0.3em rgba(250, 194, 131, 0.5)
+  }
+  .landingButton {
+      display: inline-block;
+      font-size: 2em;
+      padding: .5em .5em;
+      margin-top: 60px;
+      margin-bottom: 60px;
+      -webkit-appearance: none;
+      appearance: none;
+      background-color: #f8d76bc5;
+      color: #fff;
+      border-radius: 30px;
+      border: none;
+      cursor: pointer;
+      position: relative;
+      transition: transform ease-in 0.1s, box-shadow ease-in 0.25s;
+      box-shadow: 0 2px 25px rgba(124, 195, 91, 0.5);
+      font-family: "Dosis"
+    }
+    

@@ -1,0 +1,23 @@
+.container{
+    
+    display: flex;
+    max-width: 1300px;
+    width: 90%;
+    margin: auto;
+    gap: 5%;
+    justify-content: start;
+    align-items: stretch;
+    flex-flow: row wrap;
+    row-gap: 50px;
+
+
+/* 
+    flex-direction: row;
+    border-radius: 15px;
+    flex-wrap: wrap;
+    gap: 1em; */
+}
+
+.pagination {
+    min-width: 100%;
+}

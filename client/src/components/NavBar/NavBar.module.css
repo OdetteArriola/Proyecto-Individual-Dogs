@@ -1,0 +1,73 @@
+.navbar{
+    background-color: white;
+    height: 100px;
+    width: 100%;
+
+    /* display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    border-radius: 15px;
+    border: 2px solid rgb(243, 241, 242); */
+}
+
+
+.navbar_boton{
+    font-size: 15px;
+    height: 30px;
+    width: 162px;
+    background-color: #791679;
+    border-radius: 0.4vw;
+    color: aliceblue;
+    position: absolute;
+    top: 2.3%;
+    left: 30%;
+    cursor: pointer;
+    transition-duration: 0.4s;
+}
+
+.navbar_boton1{
+    font-size: 15px;
+    height: 30px;
+    width: 162px;
+    background-color: #791679;
+    border-radius: 0.4vw;
+    color: aliceblue;
+    position: absolute;
+    top: 2.3%;
+    left: 50%;
+    cursor: pointer;
+    transition-duration: 0.4s;
+}
+/* .navbar_boton1:hover{
+    background-color: rgb(255, 0, 119);
+    border-radius: 0.4vw;
+    border-color: aqua;
+} */
+
+.navbar_boton2{
+    font-size: 15px;
+    height: 30px;
+     width: 162px;
+    background-color: #791679;
+    border-radius: 0.4vw;
+    color: aliceblue;
+    position: absolute;
+    top: 2.3%;
+    left: 60%;
+    cursor: pointer;
+    transition-duration: 0.4s;
+}
+
+.navbar_boton3{
+     font-size: 15px;
+    height: 30px;
+     width: 162px;
+    background-color: #791679;
+    border-radius: 0.4vw;
+    color: aliceblue;
+    position: absolute;
+    top: 2.3%;
+    left: 70%;
+    cursor: pointer;
+    transition-duration: 0.4s;
+}
