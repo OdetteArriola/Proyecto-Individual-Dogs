@@ -1,12 +1,12 @@
-/* .pagination {
-
+.paginated {
+  display: inline-block;
 }
 
 .number {
-    
-} */
+    background-color: rgb(8, 8, 8);
+}
 
-.crumbs {
+/* .crumbs {
     margin: 7px;
     display: flex;
     flex-wrap: wrap;
@@ -26,7 +26,7 @@
     padding: 0.5rem .3rem;
     text-decoration: none;
     border-radius: 0.2rem;
-    border: 0.0625rem solid #d7d7d7; /* 1px */
+    border: 0.0625rem solid #d7d7d7; 
     box-shadow: 6px 7px 8px -6px rgba(69,69,69,0.7);
     color: white;
     background-color: rgb(18, 42, 41);
@@ -42,7 +42,7 @@
     padding: 0.5rem .3rem;
     text-decoration: none;
     border-radius: 0.2rem;
-    border: 2px solid #d7d7d7; /* 2px */
+    border: 2px solid #d7d7d7; 
     background-color: rgb(253, 255, 253);
     color: #013620;
     border-color: #026846;
@@ -52,4 +52,4 @@
   .nav{
     z-index: 0;
     max-width: 800px;
-  }
+  } */

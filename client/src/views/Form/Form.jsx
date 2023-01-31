@@ -1,9 +1,17 @@
 import axios from "axios";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import styles from "../Form/Form.module.css";
 import { getTemperaments } from "../../redux/actions";
+import { useDispatch, useSelector } from "react-redux";
 
 const Form = () => {
+
+    const dispatch = useDispatch()
+    const temperaments = useSelector((state) => state.temperaments)
+
+    useEffect(() => {
+        dispatch(getTemperaments())
+    }, []);
 
     const [form, setForm] = useState ({
         name:"",
@@ -27,6 +35,9 @@ const Form = () => {
         image:"",
     })
 
+    
+
+    ///HANDLERS
     const changeHandler = (event) => {
         const property = event.target.name;
         const value = event.target.value;
@@ -35,6 +46,15 @@ const Form = () => {
 
         setForm({ ...form, [property]:value }) 
     }
+
+    
+    const submitHandler = (event) => {
+        event.preventDefault()
+        const response = axios.post("http://localhost:3001/dogs", form)
+        .then(res=>alert(res))
+        .catch(err=>alert(err))
+    }
+
 
 //--------------------VALIDACIONES----------------------------------
     const validate = (form) => {
@@ -94,24 +114,12 @@ const Form = () => {
         }
 
     }
-//--------------------------------------------------------------------------------------------------------------------
+// //--------------------------------------------------------------------------------------------------------------------
        
 
         
 
-
-    const submitHandler = (event) => {
-        event.preventDefault()
-        const response = axios.post("http://localhost:3001/dogs", form)
-        .then(res=>alert(res))
-        .catch(err=>alert(err))
-    }
-
-    // const selectHandler = (event) => {
-    //     set
-    // }
-
-
+  
 
     return(
         <div className={styles.container}>
@@ -153,24 +161,24 @@ const Form = () => {
                 <input type="number" value={form.life_span} onChange={changeHandler} name="life_span" placeholder="Life span"/>
                 <span className={styles.error}>{errors.life_span}</span>
             </div>
-{/* 
+
             <div>
                 <label>Temperament: </label>
-                <select name="temperament" value={form.image} onChange={changeHandler}>
+                <select name="temperaments" value={form.image} onChange={changeHandler}>
                     <option value="null">Choose your dog's temperament</option>
                     {
                         temperaments.map(d => <option value={d.name}>{d.name}</option>)
                     }
                 </select>
-                <span className={styles.error}>{errors.temperaments}</span> */}
+                <span className={styles.error}>{errors.temperaments}</span>
                 {/* <input type="text" value={form.temperament} onChange={changeHandler} name="temperament" placeholder="" /> */}
-            {/* </div> */}
+            </div>
 
             <div className={styles.itemsContainer}>
                 <label>Image URL: </label>
-                <input type="link" value={form.image} onChange={changeHandler} name="image" placeholder="Link to the image in .jpg format"/>
+                <input type="url" value={form.image} onChange={changeHandler} name="image" placeholder="Link to the image in .jpg format"/>
                 <span className={styles.error}>{errors.image}</span>
-            </div>
+            </div> */
             <div>
 
                 <button type="submit">Create my puppy!</button>

@@ -10,12 +10,12 @@
     border: 2px solid rgb(243, 241, 242); */
 }
 
-
+/* 
 .navbar_boton{
     font-size: 15px;
     height: 30px;
     width: 162px;
-    background-color: #791679;
+    background-color: #6f7916;
     border-radius: 0.4vw;
     color: aliceblue;
     position: absolute;
@@ -23,13 +23,13 @@
     left: 30%;
     cursor: pointer;
     transition-duration: 0.4s;
-}
+} */
 
 .navbar_boton1{
     font-size: 15px;
     height: 30px;
     width: 162px;
-    background-color: #791679;
+    background-color: #1d1679;
     border-radius: 0.4vw;
     color: aliceblue;
     position: absolute;
@@ -48,7 +48,7 @@
     font-size: 15px;
     height: 30px;
      width: 162px;
-    background-color: #791679;
+    background-color: #16795b;
     border-radius: 0.4vw;
     color: aliceblue;
     position: absolute;
@@ -57,7 +57,7 @@
     cursor: pointer;
     transition-duration: 0.4s;
 }
-
+/*  
 .navbar_boton3{
      font-size: 15px;
     height: 30px;
@@ -70,4 +70,4 @@
     left: 70%;
     cursor: pointer;
     transition-duration: 0.4s;
-}
+}  */

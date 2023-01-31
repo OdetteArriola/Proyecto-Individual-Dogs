@@ -1,6 +1,6 @@
 import CardsContainer from "../../components/CardsContainer/CardsContainer";
 import NavBar from "../../components/NavBar/NavBar";
-import SideBar from "../../components/SideBar/SideBar";
+
 
 const Home = () => {
 
@@ -18,7 +18,6 @@ const Home = () => {
     return(
         <div>
             <NavBar />
-            <SideBar />
             <CardsContainer />
 
        </div>
@@ -27,11 +26,3 @@ const Home = () => {
 
 export default Home;
 
-//  {/* ORDENAMIENTOS */}
-//  <div>   
-//  <select>
-//  {/* // defaultValue="sortByName" onChange={(e) => handleOrderByName(e)}> */}
-//      <option value="A-Z">A - Z</option>
-//      <option value="Z-A">Z - A</option>
-//  </select>
-// </div>

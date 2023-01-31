@@ -1,4 +1,4 @@
-.container{
+/* .container{
     
     display: flex;
     max-width: 1300px;
@@ -8,7 +8,7 @@
     justify-content: start;
     align-items: stretch;
     flex-flow: row wrap;
-    row-gap: 50px;
+    row-gap: 50px; */
 
 
 /* 
@@ -16,8 +16,34 @@
     border-radius: 15px;
     flex-wrap: wrap;
     gap: 1em; */
-}
-
+/* } */
+/* 
 .pagination {
     min-width: 100%;
+} */
+
+
+.dogsArea{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    width: 90%;
+    margin-left: 20%;
+    margin-top: 110px;
+}
+
+.paginated{
+    min-width: 50%;
+    display:inline
+}
+
+.container {
+    border: 1px solid pink;
+    display: flex;
+    flex-direction: row;
+    border-radius: 15px;
+    flex-wrap: wrap;
+    gap: 1em;
+    
 }

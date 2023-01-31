@@ -22,6 +22,7 @@ const cleanArray = (arr) => {
 }
 
 const createDog = async(
+   
     name,
     height_min,
     height_max,
@@ -30,6 +31,7 @@ const createDog = async(
     life_span,
     temperament) => {
     return await Dog.create({
+       
         name,
         height_min,
         height_max,
