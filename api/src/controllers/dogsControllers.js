@@ -29,7 +29,9 @@ const createDog = async(
     weight_min,
     weight_max,
     life_span,
-    temperament) => {
+    temperament,
+    image,
+    ) => {
     return await Dog.create({
        
         name,
@@ -38,7 +40,8 @@ const createDog = async(
         weight_min,
         weight_max,
         life_span,
-        temperament
+        temperament,
+        image
         })
     }
 

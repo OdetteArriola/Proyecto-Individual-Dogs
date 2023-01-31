@@ -1,35 +1,37 @@
 import axios from "axios";
 import { useEffect, useState } from "react";
 import styles from "../Form/Form.module.css";
-import { getTemperaments } from "../../redux/actions";
+import { createDog, getTemperaments } from "../../redux/actions";
 import { useDispatch, useSelector } from "react-redux";
-
+import { Link, useHistory} from "react-router-dom";
 const Form = () => {
 
     const dispatch = useDispatch()
+    const history = useHistory()
     const temperaments = useSelector((state) => state.temperaments)
 
     useEffect(() => {
         dispatch(getTemperaments())
-    }, []);
+    }, [dispatch]);
 
     const [form, setForm] = useState ({
         name:"",
-        min_height:"",
-        max_height:"",
-        min_weight:"",
-        max_weight:"",
+        height_min:"",
+        height_max:"",
+        weight_min:"",
+        weight_max:"",
         life_span:"",
         temperament:[],
         image:"",
     })
 
+ 
     const [errors, setErrors] = useState({
         name:"",
-        min_height:"",
-        max_height:"",
-        min_weight:"",
-        max_weight:"",
+        height_min:"",
+        height_max:"",
+        weight_min:"",
+        weight_max:"",
         life_span:"",
         temperament:[],
         image:"",
@@ -38,21 +40,53 @@ const Form = () => {
     
 
     ///HANDLERS
-    const changeHandler = (event) => {
-        const property = event.target.name;
-        const value = event.target.value;
+    // const changeHandler = (event) => {
+    //     const property = event.target.name;
+    //     const value = event.target.value;
 
-        validate({ ...form, [property]:value})
+    //     validate({ ...form, [property]:value})
 
-        setForm({ ...form, [property]:value }) 
+    //     setForm({ ...form, [property]:value }) 
+    // }
+
+    const changeHandler = (e) => {
+        setForm({
+            ...form,
+            [e.target.name] : e.target.value
+        })
     }
 
+        const submitHandler = (e) => {
+            e.preventDefault();
+            console.log(form)
+            dispatch(createDog(form))
+            alert("Your doggy has been created!!")
+            setForm({
+                name:"",
+                height_min:"",
+                height_max:"",
+                weight_min:"",
+                weight_max:"",
+                life_span:"",
+                temperament:[],
+                image:"",
+            })
+            history.push("/home")
+        }
     
-    const submitHandler = (event) => {
-        event.preventDefault()
-        const response = axios.post("http://localhost:3001/dogs", form)
-        .then(res=>alert(res))
-        .catch(err=>alert(err))
+    // const submitHandler = (event) => {
+    //     event.preventDefault()
+    //     const response = axios.post("http://localhost:3001/dogs", form)
+    //     .then(res=>alert(res))
+    //     .catch(err=>alert(err))
+    // }
+
+
+    const selectHandler = (e) => {
+        setForm({
+            ...form,
+            status: e.target.value
+        })
     }
 
 
@@ -122,71 +156,76 @@ const Form = () => {
   
 
     return(
+
+            
         <div className={styles.container}>
             <div className={styles.form}>
-            <h2 className={styles.title}>Create your own puppy!</h2>
-        <form onSubmit={submitHandler}>
-            <div className={styles.itemsContainer}>
-                <label>Name: </label>
-                <input type="text" value={form.name} onChange={changeHandler} name="name" placeholder="Name"/>
-                {errors.name && <span className={styles.error}>{errors.name}</span>}
-            </div>
+                <Link to= "/home"><button>Volver a home</button></Link>
+                    <h2 className={styles.title}>Create your own puppy!</h2>
+                        <form onSubmit={submitHandler}>
+                            <div className={styles.itemsContainer}>
+                                <label>Name: </label>
+                                <input type="text" value={form.name} onChange={changeHandler} name="name" placeholder="Name"/>
+                                {errors.name && <span className={styles.error}>{errors.name}</span>}
+                            </div>
 
-            <div className={styles.itemsContainer}>
-                <label>Min height: </label>
-                <input type="number" value={form.min_height} onChange={changeHandler} name="min_height" placeholder="Min height" />
-                <span className={styles.error}>{errors.min_height}</span>
-            </div>
+                            <div className={styles.itemsContainer}>
+                                <label>Min height: </label>
+                                <input type="number" value={form.height_min} onChange={changeHandler} name="height_min" placeholder="Min height" />
+                                <span className={styles.error}>{errors.min_height}</span>
+                            </div>
 
-            <div className={styles.itemsContainer}>
-                <label>Max height: </label>
-                <input type="number" value={form.max_height} onChange={changeHandler} name="max_height" placeholder="Max height" />
-                <span className={styles.error}>{errors.max_height}</span>
-            </div>
+                            <div className={styles.itemsContainer}>
+                                <label>Max height: </label>
+                                <input type="number" value={form.height_max} onChange={changeHandler} name="height_max" placeholder="Max height" />
+                                <span className={styles.error}>{errors.max_height}</span>
+                            </div>
 
-            <div className={styles.itemsContainer}>
-                <label>Min weight: </label>
-                <input type="number" value={form.min_weight} onChange={changeHandler} name="min_weight" placeholder="Min weight" />
-                <span className={styles.error}>{errors.min_weight}</span>
-            </div>
+                            <div className={styles.itemsContainer}>
+                                <label>Min weight: </label>
+                                <input type="number" value={form.weight_min} onChange={changeHandler} name="weight_min" placeholder="Min weight" />
+                                <span className={styles.error}>{errors.min_weight}</span>
+                            </div>
 
-            <div className={styles.itemsContainer}>
-                <label>Max weight: </label>
-                <input type="number" value={form.max_weight} onChange={changeHandler} name="max_weight" placeholder="Max weight" />
-                <span className={styles.error}>{errors.max_weight}</span>
-            </div>
+                            <div className={styles.itemsContainer}>
+                                <label>Max weight: </label>
+                                <input type="number" value={form.weight_max} onChange={changeHandler} name="weight_max" placeholder="Max weight"/>
+                                <span className={styles.error}>{errors.max_weight}</span>
+                            </div>
 
-            <div className={styles.itemsContainer}>
-                <label>Life span: </label>
-                <input type="number" value={form.life_span} onChange={changeHandler} name="life_span" placeholder="Life span"/>
-                <span className={styles.error}>{errors.life_span}</span>
-            </div>
+                            <div className={styles.itemsContainer}>
+                                <label>Life span: </label>
+                                <input type="number" value={form.life_span} onChange={changeHandler} name="life_span" placeholder="Life span"/>
+                                <span className={styles.error}>{errors.life_span}</span>
+                            </div>
 
-            <div>
-                <label>Temperament: </label>
-                <select name="temperaments" value={form.image} onChange={changeHandler}>
-                    <option value="null">Choose your dog's temperament</option>
-                    {
-                        temperaments.map(d => <option value={d.name}>{d.name}</option>)
+                            <div>
+                                <div>Temperaments</div>
+                                <select onChange={(e) => selectHandler(e)}>
+                                {
+                                    temperaments.map(temp => (
+                                    <option value={temp.name}>{temp.name}</option>
+                                    )
+                                )}
+                                value={form.temperament}
+                                </select>
+                            </div>
+
+                            <div className={styles.itemsContainer}>
+                                <label>Image URL: </label>
+                                <input type="url" value={form.image} onChange={changeHandler} name="image" placeholder="Link to the image in .jpg format"/>
+                                <span className={styles.error}>{errors.image}</span>
+                            </div> 
+                           
+
+                            <div>
+                                <button type="submit">Create my puppy!</button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+                    
+                    )
                     }
-                </select>
-                <span className={styles.error}>{errors.temperaments}</span>
-                {/* <input type="text" value={form.temperament} onChange={changeHandler} name="temperament" placeholder="" /> */}
-            </div>
 
-            <div className={styles.itemsContainer}>
-                <label>Image URL: </label>
-                <input type="url" value={form.image} onChange={changeHandler} name="image" placeholder="Link to the image in .jpg format"/>
-                <span className={styles.error}>{errors.image}</span>
-            </div> */
-            <div>
-
-                <button type="submit">Create my puppy!</button>
-            </div>
-        </form>
-            </div>
-        </div>
-    )
-    }
-
-export default Form;
+                export default Form;
