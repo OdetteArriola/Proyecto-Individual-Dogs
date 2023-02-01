@@ -50,7 +50,7 @@ const getDogsHandler = async (req, res) => {
     try {
       let allDogs = await getAllDogs();
       if (id) {
-        let dogsById = await allDogs.filter((e) => e.id == id);
+        let dogsById = allDogs.filter((e) => e.id == id);
         dogsById.length
           ? res.status(200).json(dogsById)
           : res.status(404).send("Doesn't exist");

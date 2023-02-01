@@ -3,7 +3,7 @@ import { useState, useEffect } from "react";
 import  { useSelector, useDispatch } from "react-redux";
 import Card from "../Card/Card";
 import { Link } from "react-router-dom"
-import { getDogs, createDog, getDogsByName, getDetail, getTemperaments, filterCreated, filterTemperaments, orderByWeight, orderByName } from "../../redux/actions";
+import { getDogs, createDog, getDogsByName, getDetail, getTemperaments, filterCreated, filterTemperaments, orderByWeight, orderByName, GET_DETAIL } from "../../redux/actions";
 import styles from "./CardsContainer.module.css";
 import Paginated from "../Paginated/Paginated";
 
@@ -68,7 +68,7 @@ const CardContainer = () => {
     
 
 
-
+    console.log(getDetail(5));
 
 
 
@@ -129,32 +129,39 @@ const CardContainer = () => {
             </div>
            
            
-           
+           <div>
+           <h1>Hoooooolaaaaa</h1>
            <div className={styles.paginated}> 
+        
             <Paginated 
+            
                 dogsPerPage={dogsPerPage}
                 dogs={dogs.length}
                 paginated={paginated}
                 currentPage={currentPage}
             />
+            
+            </div>
             </div>
             
 
             <div className={styles.container}>
-                {currentDogs.map(dog =>
-                    <Link to={`/dogs/${dog.id}`}>
-                        <Card 
-                            key={dog.id}
-                            id={dog.id} 
-                            name={dog.name} 
-                            image={dog.image} 
-                            temperament={dog.temperament} 
-                            weight_min={dog.weight_min} 
-                            weight_max={dog.weight_max}
-                        />
-                    </Link>)
-                }
-            </div>
+                {currentDogs.map(dog => {
+                    console.log(dog)
+                    return <Card 
+                    key={dog.id}
+                    id={dog.id} 
+                    name={dog.name} 
+                    image={dog.image} 
+                    temperament={dog.temperament} 
+                    weight_min={dog.weight_min} 
+                    weight_max={dog.weight_max}
+                    life_span={dog.life_span}
+                />
+                    
+                })}
+                  
+                </div>
         </div>
         
     )

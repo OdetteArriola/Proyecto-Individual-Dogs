@@ -1,4 +1,4 @@
-.card{ 
+/* .card{ 
   margin: 10px 15px;
   padding: 8px;
   width: 300px;
@@ -6,7 +6,7 @@
   border-radius: 12px;
   box-shadow: 6px 7px 8px -6px rgba(69,69,69,0.7);
   position: relative;
-  background-color:rgb(8, 8, 8);
+  background-color:rgb(206, 34, 34);
   background-size: cover;
   background-position: -20px -50%;
 }
@@ -33,8 +33,8 @@
     margin: auto;
 } 
 
-.dogCard {
-    margin: 10px 15px;
+.dogCard { */
+    /* margin: 10px 15px;
       padding: 8px;
       width: 300px;
       height: 350px;
@@ -43,8 +43,8 @@
       position: relative;
       background-color:rgb(8, 8, 8);
       background-size: cover;
-      background-position: -20px -50%;
-    }
+      background-position: -20px -50%; */
+    /* }
     .dogCard:hover{
       transform: scale(1.05,1.05);
       box-shadow: 6px 7px 8px 3px rgba(255, 255, 255, 0.7);
@@ -69,9 +69,9 @@
     
     .infoArea {
       font-size: 20px;
-      display: flex;
-      flex-direction: column-reverse;
-      justify-content: center;
+      display: flex; */
+      /* flex-direction: column-reverse; */
+      /* justify-content: center;
     }
     
     .tempArea {
@@ -98,4 +98,4 @@
       top: 50%;
       left: 50%;
       border-radius: 2%;
-    }
+    } */

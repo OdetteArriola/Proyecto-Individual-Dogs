@@ -24,26 +24,32 @@
 
 
 .dogsArea{
-    display: flex;
-    flex-direction: row;
+    /* display: center; */
+    /* flex-direction: row;
     flex-wrap: wrap;
     justify-content: space-around;
     width: 90%;
     margin-left: 20%;
-    margin-top: 110px;
+    margin-top: 110px; */
 }
 
 .paginated{
-    min-width: 50%;
-    display:inline
+    /* display:inline-block;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    background-color: blue;
+    position: relative;
+    align-items: flex-start; */
+    /* min-width: 50%;
+    display:inline */
 }
 
 .container {
-    border: 1px solid pink;
+    /* border: 1px solid pink;
     display: flex;
     flex-direction: row;
     border-radius: 15px;
     flex-wrap: wrap;
     gap: 1em;
-    
+     */
 }

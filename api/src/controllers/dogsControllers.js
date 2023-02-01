@@ -14,6 +14,7 @@ const cleanArray = (arr) => {
             weight_max: parseInt(e.weight.metric.slice(4).trim()),
             height_min: parseInt(e.height.metric.slice(0, 2).trim()),
             height_max: parseInt(e.height.metric.slice(4).trim()),
+            life_span: e.life_span,
             createInDB: false,
 
         }

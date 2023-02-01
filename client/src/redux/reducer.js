@@ -8,7 +8,8 @@ import {
     FILTER_CREATED,
     FILTER_TEMPERAMENTS,
     ORDER_BY_WEIGHT,
-    ORDER_BY_NAME
+    ORDER_BY_NAME,
+    CLEAR_PAGE
 } from "./actions";
 
 const initialState = {
@@ -43,12 +44,26 @@ const initialState = {
             }
          
          case GET_DETAIL:
+            console.log(action.payload)
             return {
                 ...state,
                 detail: action.payload,
-                error: "",
+        }
+
+
+        case CLEAR_PAGE:
+            return {
+                ...state,
+                detail: undefined
             }
  
+
+
+
+
+
+
+
          case GET_TEMPERAMENTS:
             return {
                 ...state,
