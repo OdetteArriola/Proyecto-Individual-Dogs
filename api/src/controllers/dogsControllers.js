@@ -45,14 +45,14 @@ const createDog = async(
         })
     }
 
-const getDogById = async (id, source) => {
-    const dog = source === "api" 
-    ? (await axios.get(`https://api.thedogapi.com/v1/breeds/${id}`))
-    .data
-    : await Dog.findByPk(id);
+// const getDogById = async (id, source) => {
+//     const dog = source === "api" 
+//     ? (await axios.get(`https://api.thedogapi.com/v1/breeds/${id}`))
+//     .data
+//     : await Dog.findByPk(id);
 
-    return dog;
-}
+//     return dog;
+// }
 
 
 
@@ -81,4 +81,4 @@ const getAllDogs = async () => {
     return  [...databaseDogs, ...apiDogs];
 }
 
-module.exports = { createDog, getDogById, searchDogByName, getAllDogs };
+module.exports = { createDog, searchDogByName, getAllDogs };
