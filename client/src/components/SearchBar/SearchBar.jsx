@@ -1,48 +1,3 @@
-// // import styles from "./SearchBar.module.css";
-// import React, { useState } from "react";
-// import { useDispatch } from "react-redux";
-// import { getDogsByName } from "../../redux/actions";
-
-// // /////////////Esta es la pultima que hice -------------------------------------
-// export default function SearchBar() {
-//   const dispatch = useDispatch();
-//   const [name, setName] = useState("");
-
-//   function handleInputChange(e) {
-//     e.preventDefault();
-//     setName(e.target.value);
-//   }
-
-//   function handleSubmit(e) {
-//     e.preventDefault();
-//     if (!name) {
-//       alert("Por favor, inserte el nombre de la raza");
-//     } else {
-//       dispatch(getDogsByName(name()));
-//       setName("");
-//     }
-//   }
-
-//   return (
-//     <div>
-//        <input
-//         id="inputName"
-//         type="text"
-//         placeholder="Search..."
-//         onChange={(e) => handleInputChange(e)}
-//        />
-//       <button
-//         className="buttonSearch"
-//         type="submit"
-//         onSubmit={(e) => handleSubmit(e)}
-//        >
-// //         Search
-// //       </button>
-//     </div>
-//   );
-// }
-
-/////////-----------------------------------------------------------------------
 import React, { useState } from "react";
 import { useDispatch } from "react-redux";
 import { getDogsByName } from "../../redux/actions";
@@ -64,7 +19,7 @@ export default function SearchBar() {
   }
 
   return (
-    <div className={styles.searchBarObject}>
+    <div >
       <input
         type="text"
         placeholder="Search a dog..."

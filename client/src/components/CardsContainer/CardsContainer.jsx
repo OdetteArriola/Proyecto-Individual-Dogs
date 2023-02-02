@@ -128,11 +128,9 @@ const CardContainer = () => {
                 </select >
             </div>
            
-           
+        {/* Paginado */}
            <div>
-           <h1>Hoooooolaaaaa</h1>
            <div className={styles.paginated}> 
-        
             <Paginated 
             
                 dogsPerPage={dogsPerPage}
@@ -140,7 +138,6 @@ const CardContainer = () => {
                 paginated={paginated}
                 currentPage={currentPage}
             />
-            
             </div>
             </div>
             

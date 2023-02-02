@@ -11,12 +11,11 @@ function App() {
   return (
     <div className="App">
       <Switch>
-      {/* {location.pathname!=="/"&&<NavBar />} */}
-      <Route exact path="/" component={LandingPage} />
-      <Route path="/ruta/:id" component={Detail} />
-      <Route path="/home" component={Home} />
-      
-      <Route path="/create" component={Form} />
+        {/* {location.pathname!=="/"&&<NavBar />} */}
+        <Route exact path="/" component={LandingPage} />
+        <Route path="/ruta/:id" component={Detail} />
+        <Route path="/home" component={Home} />
+        <Route path="/create" component={Form} />
       </Switch>
     </div>
   );

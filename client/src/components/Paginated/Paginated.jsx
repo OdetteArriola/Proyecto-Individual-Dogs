@@ -10,7 +10,7 @@ export default function Paginated ({dogsPerPage, dogs, paginated, currentPage}){
 
     return (
         <nav>
-            <ul className={styles.paginated}>
+            <ul classname={styles.crumbs}>
                  {pageNumbers && 
                  pageNumbers.map(number => (
                    <li className={styles.number} key={number}>

@@ -1,4 +1,3 @@
-
 import {
     GET_DOGS,
     CREATE_DOG,
@@ -9,7 +8,6 @@ import {
     FILTER_TEMPERAMENTS,
     ORDER_BY_WEIGHT,
     ORDER_BY_NAME,
-    CLEAR_PAGE
 } from "./actions";
 
 const initialState = {
@@ -17,7 +15,6 @@ const initialState = {
     allDogs: [],
     temperaments: [],
     detail: [],
-    dogsCopy: [],
     error: [],
  };
  
@@ -28,14 +25,12 @@ const initialState = {
                 ...state,
                 dogs: action.payload,
                 allDogs:action.payload,
-                error: ""
             };
         
         case GET_DOGS_BY_NAME:
             return {
                 ...state,
                 dogs: action.payload,
-                // error: "",
             };
 
         case CREATE_DOG:
@@ -50,27 +45,15 @@ const initialState = {
                 detail: action.payload,
         }
 
-
-        case CLEAR_PAGE:
-            return {
-                ...state,
-                detail: undefined
-            }
- 
-
-
-
-
-
-
-
-         case GET_TEMPERAMENTS:
+        case GET_TEMPERAMENTS:
             return {
                 ...state,
                 temperaments: action.payload,
                 error: ""
             }
         
+/////FILTROS
+
         case FILTER_CREATED:
             const dogs = state.allDogs;
             let apiDbFiltered = [];
@@ -105,6 +88,7 @@ const initialState = {
             };
 
 ////ORDENAMIENTOS
+
         case ORDER_BY_NAME:
             const allDogsFilterName = state.allDogs;
             let sortedArr;

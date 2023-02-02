@@ -18,9 +18,9 @@ const Detail = (props) => {
 
   
     return (
-        
-       
         <>
+        <div><Link to= "/home"><button>Volver a home</button></Link></div>
+               
         <h1>Breed: {myDog.name}</h1>
         <img src={myDog.image} alt="img not found"></img>
         <h1>Temperament: {myDog.temperament}</h1>

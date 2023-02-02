@@ -1,5 +1,6 @@
 import CardsContainer from "../../components/CardsContainer/CardsContainer";
 import NavBar from "../../components/NavBar/NavBar";
+import Footer from "../../components/Footer/Footer";
 
 
 const Home = () => {
@@ -8,6 +9,7 @@ const Home = () => {
         <div>
             <NavBar />
             <CardsContainer />
+            <Footer />
        </div>
     )
 }

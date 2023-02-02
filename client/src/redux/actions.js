@@ -8,8 +8,6 @@ export const FILTER_CREATED = "FILTER_CREATED";
 export const FILTER_TEMPERAMENTS = "FILTER_TEMPERAMENTS"
 export const ORDER_BY_WEIGHT = "ORDER_BY_WEIGHT";
 export const ORDER_BY_NAME = "ORDER_BY_NAME";
-export const CLEAR_PAGE = "CLEAR_PAGE";
-
 
 
 export const getDogs = () => {
@@ -39,19 +37,13 @@ export const getDogsByName = (name) => {
 export const getDetail = (id) => {
     console.log(id)
     return async (dispatch) => {
-        const apiData = await axios.get(`http://localhost:3001/dogs/${id}`)   ///Aquí podría estar el error porque puede uqe sea /dogs/id checar si es que no funciona
+        const apiData = await axios.get(`http://localhost:3001/dogs/${id}`)  
         console.log(apiData.data[0])
         return dispatch({
-            type: GET_DETAIL, payload: apiData.data[0] //// Jorge aquí lo hace con una const dog que es igual a apiData.data por si hay errpor checar eso
+            type: GET_DETAIL, payload: apiData.data[0] 
         })
     }
 };
-
-export const clearPage = () => {
-    return{
-        type: CLEAR_PAGE
-    }
-}
 
 export const getTemperaments = () => {
     return async (dispatch) => {
@@ -78,13 +70,14 @@ export const filterTemperaments = (temperament) => {
     }
 }
 
+///ORDENAMIENTOS
+
 export const orderByWeight = (payload) => {
     return {
       type: ORDER_BY_WEIGHT,
       payload,
     };
 };
-
 
 export const orderByName = (payload) => {
     return {
